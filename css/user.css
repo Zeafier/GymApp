@@ -1,0 +1,194 @@
+@import "style.css";
+@import "fontawesome-free-5.9.0-web/css/all.css";
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+/* Style the tab */
+.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: gainsboro;
+    padding-bottom: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.tab h3{
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: 5%;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+      background-color: indianred;
+      border: none;
+      outline: none;
+      cursor: pointer;
+    position:relative;
+    left: 40%;
+      padding: 14px 16px;
+      transition: 0.3s;
+      font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+    background-color: gainsboro;
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+}
+/* Style of combobox */
+#mainselection select {
+    position:relative;
+   border: 0;
+   color: black;
+   background: transparent;
+   font-size: 20px;
+   font-weight: bold;
+   padding: 2px 10px;
+   width: inherit;
+   -webkit-appearance: none;
+}
+
+#mainselection {
+   overflow:hidden;
+    align-content: center;
+    margin-left: 35%;
+   width:350px;
+   -moz-border-radius: 9px 9px 9px 9px;
+   -webkit-border-radius: 9px 9px 9px 9px;
+   border-radius: 9px 9px 9px 9px;
+   box-shadow: 1px 1px 6px #330033;
+    background: #f55536 url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjxzdmcgaGVpZ2h0PSI3cHgiIHZlcnNpb249IjEuMSIgdmlld0JveD0iMCAwIDEwIDciIHdpZHRoPSIxMHB4IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnNrZXRjaD0iaHR0cDovL3d3dy5ib2hlbWlhbmNvZGluZy5jb20vc2tldGNoL25zIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+PHRpdGxlLz48ZGVzYy8+PGRlZnMvPjxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCIgaWQ9IlBhZ2UtMSIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiPjxnIGZpbGw9IiMwMDAwMDAiIGlkPSJDb3JlIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtNDY5LjAwMDAwMCwgLTkuMDAwMDAwKSI+PGcgaWQ9ImFycm93LWRyb3AtZG93biIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNDY5LjAwMDAwMCwgOS41MDAwMDApIj48cGF0aCBkPSJNMCwwIEw1LDUgTDEwLDAgTDAsMCBaIiBpZD0iU2hhcGUiLz48L2c+PC9nPjwvZz48L3N2Zz4=) no-repeat scroll 319px center;
+}
+
+/* Style of date */
+[type="date"] {
+  background:#fff url(https://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/calendar_2.png)  97% 50% no-repeat ;
+}
+[type="date"]::-webkit-inner-spin-button {
+  display: none;
+}
+[type="date"]::-webkit-calendar-picker-indicator {
+  opacity: 0;
+}
+/* Style the tab content */
+input {
+  border: 1px solid #c4c4c4;
+  border-radius: 5px;
+  background-color: #fff;
+  padding: 3px 5px;
+  box-shadow: inset 0 3px 6px rgba(0,0,0,0.1);
+  width: 190px;
+}
+/* Style of the paragraph */
+.book_class p{
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: 5%;
+}
+/* Style of the Book submit */
+.Book-button {
+  padding: 1.2em 0;
+    margin-top: 10px;
+  }
+/* Style of the Book submit */
+.Book-button input[type="submit"]{
+    margin-left: 41%;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 6px;
+    margin-top: 10px;
+    background-color: red;
+    font-size: 17px;
+    border: 2px;
+    border-radius: 12px;
+    cursor: pointer;
+    color: black;
+}
+
+.Book-button input[type="submit"]:hover{
+    background-color: greenyellow;
+}
+
+.section .manage-image {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	z-index: 0;
+}
+/* Style of the select */
+.tab select{
+    float: right;
+    margin-right: 5px;
+}
+/* Style of the paragraph */
+.tab p{
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: 5%;
+    color: darkred;
+}
+
+.btn{
+    float: left;
+}
+/* Update button */
+.tab .button-update {
+    background: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjxzdmcgaGVpZ2h0PSIzMnB4IiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAzMiAzMiIgd2lkdGg9IjMycHgiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6c2tldGNoPSJodHRwOi8vd3d3LmJvaGVtaWFuY29kaW5nLmNvbS9za2V0Y2gvbnMiIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIj48dGl0bGUvPjxkZXNjLz48ZGVmcy8+PGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIiBpZD0iUGFnZS0xIiBzdHJva2U9Im5vbmUiIHN0cm9rZS13aWR0aD0iMSI+PGcgZmlsbD0iIzE1N0VGQiIgaWQ9Imljb24tMTM2LWRvY3VtZW50LWVkaXQiPjxwYXRoIGQ9Ik0yNi40NDMyMjc4LDEyLjE1MDMzNDUgTDE1LjE1NzAxMzEsMjMuNDQ5OTA2NCBMMTUuMTU3MDEzMSwyMy40NDk5MDY0IEwxMi41NTE0NDY1LDIwLjg0NDMzOTcgTDIzLjg0MzUzODMsOS41NTA2NDUxMyBMMjYuNDQzMjI3OCwxMi4xNTAzMzQ1IEwyNi40NDMyMjc4LDEyLjE1MDMzNDUgWiBNMjcuMTQ5OTE2NCwxMS40NDI4MDk2IEwyOC44NzkwOTU0LDkuNzExNTg0MDUgQzI5LjI2OTA2OSw5LjMyMTE0ODkyIDI5LjI2NjE5NSw4LjY4NjUwNDIzIDI4Ljg3NDMsOC4yOTU2ODQ5NyBMMjcuNjk0NDg2Niw3LjExOTEwOTk4IEMyNy4zMDE4NjQ2LDYuNzI3NTY1NjQgMjYuNjY5MjU3Nyw2LjcyNDUyNDY2IDI2LjI3NzkxMjYsNy4xMTU5MjUzMSBMMjQuNTUwNTk0OSw4Ljg0MzQ4ODE3IEwyNy4xNDk5MTY0LDExLjQ0MjgwOTYgTDI3LjE0OTkxNjQsMTEuNDQyODA5NiBaIE0xMS45MDM3MDYxLDIxLjYxMDgxMjkgTDExLjI2NDE2MDIsMjQuNzIzNTEwMyBMMTQuMzk5MDY0NSwyNC4xMDYxNzEzIEwxMS45MDM3MDYxLDIxLjYxMDgxMjkgTDExLjkwMzcwNjEsMjEuNjEwODEyOSBMMTEuOTAzNzA2MSwyMS42MTA4MTI5IFogTTIyLDE4IEwyMiwyOC4wMDI1NzgxIEMyMiwyOS4xMDkwNzQ2IDIxLjEwNTcyMzgsMzAgMjAuMDAyNTc4MSwzMCBMNC45OTc0MjE5MSwzMCBDMy44OTA5MjUzOSwzMCAzLDI5LjEwMTI4NzggMywyNy45OTI2NzAxIEwzLDUuMDA3MzI5OTQgQzMsMy44OTgzMzgzMiAzLjg5OTI0OTYsMyA1LjAwODUzMDIsMyBMMTUsMyBMMTUsOS4wMDE4OTg2NSBDMTUsMTAuMTEzMjkzNiAxNS44OTgwODA2LDExIDE3LjAwNTkxOTEsMTEgTDIxLDExIEwyNS41ODAxMDY3LDYuNDE5ODkzMjcgQzI2LjM3Mjc4MSw1LjYyNzIxODk3IDI3LjYzMTM5MDYsNS42MzEzOTA2IDI4LjQxMDI1MDQsNi40MTAyNTAzNiBMMjkuNTg5NzQ5Niw3LjU4OTc0OTYyIEMzMC4zNjYxODgxLDguMzY2MTg4MDkgMzAuMzY0MjkyMSw5LjYzNTcwNzg1IDI5LjU4MDEwNjcsMTAuNDE5ODkzMiBMMjIsMTggTDIyLDE4IFogTTE2LDMgTDE2LDguOTk3MDcwNjcgQzE2LDkuNTUwOTczMjQgMTYuNDUwOTc1MiwxMCAxNi45OTA3NzgsMTAgTDIyLDEwIEwxNiwzIEwxNiwzIFoiIGlkPSJkb2N1bWVudC1lZGl0Ii8+PC9nPjwvZz48L3N2Zz4=");
+    cursor:pointer;
+    border: none;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+}
+.tab .button-update:hover{
+    opacity: 0.2;
+}
+/* Delete button */
+.tab .button-delete {
+    background: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjxzdmcgdmVyc2lvbj0iMS4xIiB2aWV3Qm94PSIyLjU0MzEyOTk5NDU5MjE2RS0wNiAtMC4xOTQ2NTU5OTk1NDEyODMgMTEzLjUyNjk5Nzg4NDExNiAxMTMuNTI3NjU2MTgyNjQ3IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIj48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9ImRlZjAiIHgxPSIwLjQ5OTk5NSIgeDI9IjAuNDk5OTk1IiB5MT0iMS43Mzc3OUUtMDYiIHkyPSIxLjAwMDAxIj48c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiNGMjdFNUUiLz48c3RvcCBvZmZzZXQ9IjAuNSIgc3RvcC1jb2xvcj0iI0VCMUMyNCIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iI0NFMjIyOSIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxnPjxwYXRoIGQ9Ik0yLjU0MzEzRS0wNiw4Ny41MzQ3TDMwLjk2NCw1Ni41NjQgMi41NDMxM0UtMDYsMjUuNjAxMyAyNS43OTczLC0wLjE5NDY1NiA1Ni43NjI3LDMwLjc3MDcgODcuNzI2NywtMC4xOTQ2NTYgMTEzLjUyNywyNS42MDEzIDgyLjU2MjcsNTYuNTY5MyAxMTMuNTI3LDg3LjUzNDcgODcuNzI2NywxMTMuMzI5IDU2Ljc2NjcsODIuMzY0IDI1Ljc5NzMsMTEzLjMzMyAyLjU0MzEzRS0wNiw4Ny41MzQ3eiIgZmlsbD0iIzk5MDAwMCIvPjxwYXRoIGQ9Ik0xMTEuNjQxLDg3LjUzNDFMODAuNjc2OCw1Ni41NzAxIDExMS42NDEsMjUuNjAyMSA4Ny43MjYxLDEuNjkwMTQgNTYuNzYzNSwzMi42NTU1IDI1Ljc5NjgsMS42OTAxNCAxLjg4NDgsMjUuNjAyMSAzMi44NTAxLDU2LjU2NDggMS44ODQ4LDg3LjUzNDEgMjUuNzk2OCwxMTEuNDQ3IDU2Ljc2NzUsODAuNDc4MSA4Ny43MjYxLDExMS40NDMgMTExLjY0MSw4Ny41MzQxeiIgZmlsbD0idXJsKCNkZWYwKSIvPjxwYXRoIGQ9Ik01My41NTA3LDQyLjE1OTdDNjkuOTc3MywzNi45MTg0LDg2LjI5ODcsMzUuMDc4NCwxMDEuMDM2LDM2LjIwNzdMMTExLjY0LDI1LjYwMjQgODcuNzI2NywxLjY5MDQgNTYuNzYyNywzMi42NTU3IDI1Ljc5NzMsMS42OTA0IDEuODg1MzQsMjUuNjAyNCAyOS4wMzQ3LDUyLjc0OTFDMzYuNTE4Nyw0OC41NjUxLDQ0LjczODcsNDQuOTcxNyw1My41NTA3LDQyLjE1OTd6IiBmaWxsPSIjRkZGRkZGIiBzdHlsZT0iZmlsbC1vcGFjaXR5OjAuMTAxOTYwNzg0MzEzNzI1Ii8+PC9nPjwvc3ZnPg==");
+    background-repeat: no-repeat;
+    cursor:pointer;
+    border: none;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+}
+.tab .button-delete:hover{
+    opacity: 0.2;
+}
+
+#popup{
+    display: none;
+    background: #efefef;
+    border: 1px solid black;
+    
+}
