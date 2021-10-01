@@ -69,20 +69,23 @@ if(isset($_POST['Change_password']))
     <link href="../Assignment/css/fontawesome-free-5.9.0-web/css/all.css" rel="stylesheet"> <!--load all styles -->
 </head>
 <body>
-    <!-- Navigation -->
-    <nav>
-        <div class="wrapper-menu">
-            <ul>
-                <a href="welcome.php"><div class="logo"></div></a>
-                <li><a href="welcome.php" class="active">Home</a></li>
-                <li><a href="#" class="active"><?php print $_SESSION['login'];?></a></li>
+    <header>
+        <!-- Navigation -->
+        <nav>
+            <div class="wrapper-menu">
+                <a href="index.html">
+                    <div class="logo"></div>
+                </a>
+                <ul>
+                    <li><a href="welcome.php" class="active">Home</a></li>
+                    <li><a href="#" class="active"><?php print $_SESSION['login'];?></a></li>
+                </ul>
                 <div class="bt-login">
                     <a href="logout.php"><button type="submit">Logout</button></a>
                 </div>
-            </ul>
-        </div>
-    </nav>
-    <!-- Navigation -->
+            </div>
+        </nav>
+    </header>
     
     <div class="container">    
         <div class="change-password" style="background-color:gainsboro; padding: 6px 12px; border: 1px solid #ccc; border-top: none;">
@@ -95,7 +98,7 @@ if(isset($_POST['Change_password']))
                 <p style="text-align: center; text-transform: uppercase; margin-top: 5%;">Confirm password</p>
                 <center><input type="password" class="text" value="" style="width:400px; text-align: center;" name="new2" maxlength="25" required></center>
                 <div class="Book-button">
-                    <input type="submit" name="Change_password"  value="Book">
+                    <input type="submit" name="Change_password"  value="Update">
                 </div>
             </form>
         </div>

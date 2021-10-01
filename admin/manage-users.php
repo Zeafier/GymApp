@@ -134,6 +134,7 @@ if(isset($_GET['uid']))
                                   <th> Last Name</th>
                                   <th> Email Id</th>
                                   <th>Contact no.</th>
+                                  <th>Account type</th>
                                   <th>Reg. Date</th>
                               </tr>
                               </thead>
@@ -142,9 +143,9 @@ if(isset($_GET['uid']))
                                   
                                   <?php 
                                   $cnt=1;
-                                  $sql = $con -> prepare("Select _uID_, _fn_, _ln_, _em_, _contactno_, _posting_date_ FROM _users_ WHERE _is_admin_ = 0");
+                                  $sql = $con -> prepare("Select _uID_, _fn_, _ln_, _em_, _contactno_, _posting_date_, _is_admin_ FROM _users_");
                                   $sql -> execute();
-                                  $sql -> bind_result($id, $fn, $ln, $em, $cn, $pd);
+                                  $sql -> bind_result($id, $fn, $ln, $em, $cn, $pd, $isadmin);
                                   while ($sql->fetch())
                                   {?>
                                   <tr>
@@ -153,6 +154,7 @@ if(isset($_GET['uid']))
                                       <td><?php print $ln;?></td>
                                       <td><?php print $em;?></td>
                                       <td><?php print $cn;?></td>  
+                                      <td><?php if($isadmin == 1) { print "Admin"; }else{ print "User"; } ?></td>
                                       <td><?php print $pd;?></td>
                                       <td>
 

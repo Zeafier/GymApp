@@ -1,13 +1,13 @@
 <?php
 
-//Search for cutomer
+//Search for customer
 if(isset($_POST['Search'])){
     if(!empty($_POST["name_value"])){
         $res = clean($_POST['search-by']);
         $name = "name";
         $sur = "surname";
         $em = "email";
-        //Seach by name
+        //Search by name
         if($res==$name){
             $val=clean($_POST["name_value"]);
             $val = preg_replace('/(?<!\\\)([%_])/', '\\\$1',$val);
@@ -18,7 +18,7 @@ if(isset($_POST['Search'])){
             $sql -> bind_result($id, $fn, $ln, $em);
             if(!$sql->num_rows > 0){
                 while ($sql->fetch())
-                {?>
+                { ?>
                 <tr>
                 <td><?php print $cnt;?></td>
                   <td><?php print $fn;?></td>
@@ -37,7 +37,7 @@ if(isset($_POST['Search'])){
             }else{
                 echo "<p><center><h2>Records not found</h2></center></p>";
             }  
-            //Seach by surname
+            //Search by surname
         }else if($res==$sur){
             $val=clean($_POST["name_value"]);
             $val = preg_replace('/(?<!\\\)([%_])/', '\\\$1',$val);
@@ -48,7 +48,7 @@ if(isset($_POST['Search'])){
             $sql -> bind_result($id, $fn, $ln, $em);
             if(!$sql->num_rows > 0){
                 while ($sql->fetch())
-                {?>
+                { ?>
                 <tr>
                 <td><?php print $cnt;?></td>
                   <td><?php print $fn;?></td>
@@ -68,7 +68,7 @@ if(isset($_POST['Search'])){
             }else{
                 echo "<p><center><h2>Records not found</h2></center></p>";
             }
-            //Seach by email
+            //Search by email
         }else if($res==$em){
             $val=clean($_POST["name_value"]);
             $val = preg_replace('/(?<!\\\)([%_])/', '\\\$1',$val);

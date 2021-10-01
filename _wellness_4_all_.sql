@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 07, 2019 at 03:51 PM
--- Server version: 10.1.40-MariaDB
--- PHP Version: 7.3.5
+-- Generation Time: Oct 01, 2021 at 10:03 PM
+-- Server version: 10.4.21-MariaDB
+-- PHP Version: 8.0.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -21,6 +20,8 @@ SET time_zone = "+00:00";
 --
 -- Database: `_wellness_4_all_`
 --
+CREATE DATABASE IF NOT EXISTS `_wellness_4_all_` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `_wellness_4_all_`;
 
 -- --------------------------------------------------------
 
@@ -28,10 +29,12 @@ SET time_zone = "+00:00";
 -- Table structure for table `_address_`
 --
 
-CREATE TABLE `_address_` (
+CREATE TABLE IF NOT EXISTS `_address_` (
   `_cID_` int(11) NOT NULL,
   `_Postcode_` varchar(7) NOT NULL,
-  `_Street_` varchar(90) NOT NULL
+  `_Street_` varchar(90) NOT NULL,
+  PRIMARY KEY (`_Postcode_`),
+  KEY `_cID_` (`_cID_`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -41,7 +44,9 @@ CREATE TABLE `_address_` (
 INSERT INTO `_address_` (`_cID_`, `_Postcode_`, `_Street_`) VALUES
 (1, 'D13TEST', 'test'),
 (1, 'E163tb', 'Partridge Close'),
+(3, 'Eb4324', 'Grimme War'),
 (1, 'egret34', 'this is test street'),
+(1, 'Let9432', 'Some Street'),
 (1, 'Post213', 'Street'),
 (1, 'test01', 'new'),
 (1, 'test011', 'new'),
@@ -53,32 +58,26 @@ INSERT INTO `_address_` (`_cID_`, `_Postcode_`, `_Street_`) VALUES
 -- Table structure for table `_book_trainer`
 --
 
-CREATE TABLE `_book_trainer` (
-  `_btID_` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `_book_trainer` (
+  `_btID_` int(11) NOT NULL AUTO_INCREMENT,
   `_tID_` int(11) DEFAULT NULL,
   `_cID_` int(11) DEFAULT NULL,
   `_bDATE_` date DEFAULT NULL,
   `_uID_` int(11) DEFAULT NULL,
-  `_is_confirm_` tinyint(1) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `_is_confirm_` tinyint(1) DEFAULT NULL,
+  PRIMARY KEY (`_btID_`),
+  KEY `_tID_` (`_tID_`),
+  KEY `_cID_` (`_cID_`),
+  KEY `_uID_` (`_uID_`)
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `_book_trainer`
 --
 
 INSERT INTO `_book_trainer` (`_btID_`, `_tID_`, `_cID_`, `_bDATE_`, `_uID_`, `_is_confirm_`) VALUES
-(1, 3, 5, '2019-06-28', 17, 1),
-(2, 1, 1, '0000-00-00', 17, 1),
-(3, 5, 5, '2019-06-27', 17, 1),
-(4, 5, 5, '2019-07-04', 17, 1),
-(5, 2, 7, '2019-07-01', 17, 1),
-(6, 3, 1, '2019-09-02', 17, 0),
-(7, 5, 5, '2019-10-05', 17, 0),
-(11, 2, 1, '2019-07-10', 17, 1),
-(12, 3, 9, '2066-07-05', 17, 1),
-(13, 4, 3, '2027-05-07', 17, 1),
-(14, 1, 7, '2019-07-12', 24, 1),
-(15, 1, 4, '2019-11-05', 24, 0);
+(16, 5, 2, '2021-10-21', 28, 1),
+(17, 1, 8, '2021-10-16', 28, 1);
 
 -- --------------------------------------------------------
 
@@ -86,10 +85,11 @@ INSERT INTO `_book_trainer` (`_btID_`, `_tID_`, `_cID_`, `_bDATE_`, `_uID_`, `_i
 -- Table structure for table `_city_`
 --
 
-CREATE TABLE `_city_` (
-  `_cID_` int(11) NOT NULL,
-  `_c_name_` varchar(45) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+CREATE TABLE IF NOT EXISTS `_city_` (
+  `_cID_` int(11) NOT NULL AUTO_INCREMENT,
+  `_c_name_` varchar(45) NOT NULL,
+  PRIMARY KEY (`_cID_`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `_city_`
@@ -107,10 +107,11 @@ INSERT INTO `_city_` (`_cID_`, `_c_name_`) VALUES
 -- Table structure for table `_class_`
 --
 
-CREATE TABLE `_class_` (
-  `_cID_` int(11) NOT NULL,
-  `_Class_name_` varchar(90) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+CREATE TABLE IF NOT EXISTS `_class_` (
+  `_cID_` int(11) NOT NULL AUTO_INCREMENT,
+  `_Class_name_` varchar(90) NOT NULL,
+  PRIMARY KEY (`_cID_`)
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `_class_`
@@ -133,11 +134,12 @@ INSERT INTO `_class_` (`_cID_`, `_Class_name_`) VALUES
 -- Table structure for table `_personal_trainer_`
 --
 
-CREATE TABLE `_personal_trainer_` (
-  `_pID_` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `_personal_trainer_` (
+  `_pID_` int(11) NOT NULL AUTO_INCREMENT,
   `_pFN_` varchar(90) DEFAULT NULL,
-  `_pLN_` varchar(90) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `_pLN_` varchar(90) DEFAULT NULL,
+  PRIMARY KEY (`_pID_`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `_personal_trainer_`
@@ -156,8 +158,8 @@ INSERT INTO `_personal_trainer_` (`_pID_`, `_pFN_`, `_pLN_`) VALUES
 -- Table structure for table `_users_`
 --
 
-CREATE TABLE `_users_` (
-  `_uID_` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `_users_` (
+  `_uID_` int(11) NOT NULL AUTO_INCREMENT,
   `_pw_` varchar(90) NOT NULL,
   `_posting_date_` date DEFAULT NULL,
   `_postcode_` varchar(7) NOT NULL,
@@ -166,19 +168,19 @@ CREATE TABLE `_users_` (
   `_fn_` varchar(90) NOT NULL,
   `_em_` varchar(90) NOT NULL,
   `_contactno_` int(11) NOT NULL,
-  `_is_admin_` tinyint(1) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `_is_admin_` tinyint(1) DEFAULT NULL,
+  PRIMARY KEY (`_uID_`),
+  KEY `_postcode_` (`_postcode_`)
+) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `_users_`
 --
 
 INSERT INTO `_users_` (`_uID_`, `_pw_`, `_posting_date_`, `_postcode_`, `_h_number_`, `_ln_`, `_fn_`, `_em_`, `_contactno_`, `_is_admin_`) VALUES
-(17, '$2y$10$yYbnGcL/4UR20KQF3IFF7uzdRe3IoFkG5FLJQPeoHU5RnvOdrvCG.', '2019-06-19', 'E163tb', '432', 'Malkowski', 'Krystian', 'krismalkos@gmail.com', 2147483647, 1),
-(23, '$2y$10$UxBifphOU05cZdifMA9a8uwHGR4KMrq1VJi/6bdy5z.eIQXqL1NwC', '2019-07-05', 'Test012', '79', 'Malkowski', 'Krystian', 'test.user@gmail.com', 2019, 0),
-(24, '$2y$10$uBi1tmI45PXRPvBsBMO6e.kIcvzYo5WZ.3oQZ2AqkrTW/Qw9ys2OK', '2019-07-05', 'E163tb', '32', 'Malkowski', 'Krzysztof', 'k.m96yr@gmail.com', 2147483647, 0),
-(25, '$2y$10$BRJJvU/ppjc8vT6GDC1dce0Udz1YyJRKh34Yb3d9zwWO/jXzBtI0.', '2019-07-05', 'test01', '123', 'account', 'Tester', 'xx2primexx@gmail.com', 2147483647, 0),
-(27, '$2y$10$4N/OMW4G6fl/T.e6glRWhO.LFnZ1ANDWb3qJrmErSqES7Zf90piVy', '2019-07-06', 'Post213', '321', 'Account', 'Test', 'testUser@gmail.com', 700300400, 0);
+(27, '$2y$10$4N/OMW4G6fl/T.e6glRWhO.LFnZ1ANDWb3qJrmErSqES7Zf90piVy', '2019-07-06', 'Post213', '321', 'Account', 'Test', 'testUser@gmail.com', 700300400, 0),
+(28, '$2y$10$tcx/EW7p0iibUlIzki1wU.ZVmhJt3Zzj05TIrd/WX1FkhOS9d9eOO', '2021-10-01', 'Eb4324', '34', 'User', 'Test', 'testuser@test.com', 700900700, 0),
+(29, '$2y$10$jQYyB6Zu3nq7JECQ371Gu.X8VhHoBr6aemp3rb.h86FJhk5t5h3sC', '2021-10-01', 'Let9432', '764A', 'User', 'Admin', 'adminuser@admin.com', 2147483647, 1);
 
 -- --------------------------------------------------------
 
@@ -186,128 +188,25 @@ INSERT INTO `_users_` (`_uID_`, `_pw_`, `_posting_date_`, `_postcode_`, `_h_numb
 -- Table structure for table `_user_class_`
 --
 
-CREATE TABLE `_user_class_` (
+CREATE TABLE IF NOT EXISTS `_user_class_` (
   `_class_id_` int(11) NOT NULL,
-  `_cu_ID_` int(11) NOT NULL,
+  `_cu_ID_` int(11) NOT NULL AUTO_INCREMENT,
   `_user_ID_` int(11) NOT NULL,
   `_date_` date DEFAULT NULL,
-  `_is_confirmed_` tinyint(1) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `_is_confirmed_` tinyint(1) DEFAULT NULL,
+  PRIMARY KEY (`_cu_ID_`),
+  KEY `_class_id_` (`_class_id_`),
+  KEY `_user_ID_` (`_user_ID_`)
+) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `_user_class_`
 --
 
 INSERT INTO `_user_class_` (`_class_id_`, `_cu_ID_`, `_user_ID_`, `_date_`, `_is_confirmed_`) VALUES
-(2, 1, 17, '2019-06-23', 1),
-(7, 2, 17, '2019-06-30', 1),
-(1, 3, 17, '2019-07-07', 1),
-(5, 4, 17, '2019-09-06', 0),
-(7, 5, 17, '2019-10-07', 1),
-(9, 6, 17, '2019-10-06', 0),
-(2, 7, 17, '2019-09-04', 1),
-(5, 8, 17, '2019-10-02', 1),
-(2, 15, 17, '2019-10-02', 1),
-(2, 16, 17, '2019-10-02', 1),
-(5, 19, 17, '2019-07-07', 1),
-(1, 20, 17, '2019-07-08', 1),
-(3, 21, 17, '2064-07-06', 1),
-(1, 22, 17, '2019-11-05', 1),
-(9, 26, 24, '2019-12-06', 0),
-(9, 27, 24, '2022-07-10', 1);
-
---
--- Indexes for dumped tables
---
-
---
--- Indexes for table `_address_`
---
-ALTER TABLE `_address_`
-  ADD PRIMARY KEY (`_Postcode_`),
-  ADD KEY `_cID_` (`_cID_`);
-
---
--- Indexes for table `_book_trainer`
---
-ALTER TABLE `_book_trainer`
-  ADD PRIMARY KEY (`_btID_`),
-  ADD KEY `_tID_` (`_tID_`),
-  ADD KEY `_cID_` (`_cID_`),
-  ADD KEY `_uID_` (`_uID_`);
-
---
--- Indexes for table `_city_`
---
-ALTER TABLE `_city_`
-  ADD PRIMARY KEY (`_cID_`);
-
---
--- Indexes for table `_class_`
---
-ALTER TABLE `_class_`
-  ADD PRIMARY KEY (`_cID_`);
-
---
--- Indexes for table `_personal_trainer_`
---
-ALTER TABLE `_personal_trainer_`
-  ADD PRIMARY KEY (`_pID_`);
-
---
--- Indexes for table `_users_`
---
-ALTER TABLE `_users_`
-  ADD PRIMARY KEY (`_uID_`),
-  ADD KEY `_postcode_` (`_postcode_`);
-
---
--- Indexes for table `_user_class_`
---
-ALTER TABLE `_user_class_`
-  ADD PRIMARY KEY (`_cu_ID_`),
-  ADD KEY `_class_id_` (`_class_id_`),
-  ADD KEY `_user_ID_` (`_user_ID_`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `_book_trainer`
---
-ALTER TABLE `_book_trainer`
-  MODIFY `_btID_` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
-
---
--- AUTO_INCREMENT for table `_city_`
---
-ALTER TABLE `_city_`
-  MODIFY `_cID_` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
---
--- AUTO_INCREMENT for table `_class_`
---
-ALTER TABLE `_class_`
-  MODIFY `_cID_` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
-
---
--- AUTO_INCREMENT for table `_personal_trainer_`
---
-ALTER TABLE `_personal_trainer_`
-  MODIFY `_pID_` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-
---
--- AUTO_INCREMENT for table `_users_`
---
-ALTER TABLE `_users_`
-  MODIFY `_uID_` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
-
---
--- AUTO_INCREMENT for table `_user_class_`
---
-ALTER TABLE `_user_class_`
-  MODIFY `_cu_ID_` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+(7, 28, 28, '2021-10-22', 1),
+(3, 29, 28, '2021-10-29', 1),
+(1, 30, 28, '2021-10-18', 1);
 
 --
 -- Constraints for dumped tables

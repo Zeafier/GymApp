@@ -61,18 +61,23 @@ $date;
 </head>
 <body onload="openBook(event, 'Class')">
 
-    <nav>
-        <div class="wrapper-menu">
-            <ul>
-                <a href="welcome.php"><div class="logo"></div></a>
-                <li><a href="welcome.php" class="active">Home</a></li>
-                <li><a href="#" class="active"><?php echo $_SESSION['login'];?></a></li>
+    <header>
+        <!-- Navigation -->
+        <nav>
+            <div class="wrapper-menu">
+                <a href="index.html">
+                    <div class="logo"></div>
+                </a>
+                <ul>
+                    <li><a href="welcome.php" class="active">Home</a></li>
+                    <li><a href="#" class="active"><?php print $_SESSION['login'];?></a></li>
+                </ul>
                 <div class="bt-login">
                     <a href="logout.php"><button type="submit">Logout</button></a>
                 </div>
-            </ul>
-        </div>
-    </nav>
+            </div>
+        </nav>
+    </header>
         
     
     <!-- START SECTION -->

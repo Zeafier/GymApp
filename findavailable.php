@@ -99,20 +99,23 @@ if(isset($_POST["Trainer"])){
     
 </head>
 <body onload="openBook(event, '<?php if(isset($_GET['trainer'])){echo $tr;}else{echo $cl;} ?>')">
-    <!-- navigation-->
-    <nav>
-        <div class="wrapper-menu">
-            <ul>
-                <a href="welcome.php"><div class="logo"></div></a>
-                <li><a href="welcome.php" class="active">Home</a></li>
-                <li><a href="#" class="active"><?php echo $_SESSION['login'];?></a></li>
+    <header>
+        <!-- Navigation -->
+        <nav>
+            <div class="wrapper-menu">
+                <a href="index.html">
+                    <div class="logo"></div>
+                </a>
+                <ul>
+                    <li><a href="welcome.php" class="active">Home</a></li>
+                    <li><a href="#" class="active"><?php print $_SESSION['login'];?></a></li>
+                </ul>
                 <div class="bt-login">
                     <a href="logout.php"><button type="submit">Logout</button></a>
                 </div>
-            </ul>
-        </div>
-    </nav>
-    <!-- navigation-->
+            </div>
+        </nav>
+    </header>
     
     <!--Choosing buttons--> 
     <div class="container">
